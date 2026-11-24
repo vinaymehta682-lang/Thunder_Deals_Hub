@@ -1,0 +1,758 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thunder Deals — Worldwide Offers</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'brand-bolt': '#F59E0B',
+        'success': '#15803D',
+        'on-success': '#FFFFFF',
+        'light-primary': '#0037B0',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#1D4ED8',
+        'light-on-primary-container': '#CAD3FF',
+        'light-secondary': '#904D00',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#FE932C',
+        'light-on-secondary-container': '#663500',
+        'light-tertiary': '#7F2500',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#A73400',
+        'light-on-tertiary-container': '#FFC9B7',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F9F9FF',
+        'light-on-background': '#111C2D',
+        'light-surface': '#F9F9FF',
+        'light-surface-dim': '#CFDAF2',
+        'light-surface-bright': '#F9F9FF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F0F3FF',
+        'light-surface-container': '#E7EEFF',
+        'light-surface-container-high': '#DEE8FF',
+        'light-surface-container-highest': '#D8E3FB',
+        'light-on-surface': '#111C2D',
+        'light-surface-variant': '#E0E1F4',
+        'light-on-surface-variant': '#434655',
+        'light-outline': '#747686',
+        'light-outline-variant': '#C4C5D7',
+        'light-inverse-surface': '#263143',
+        'light-inverse-on-surface': '#ECF1FF',
+        'light-inverse-primary': '#B7C4FF',
+        'dark-primary': '#B7C4FF',
+        'dark-on-primary': '#002682',
+        'dark-primary-container': '#1D4ED8',
+        'dark-on-primary-container': '#CAD3FF',
+        'dark-secondary': '#FFB77D',
+        'dark-on-secondary': '#4D2600',
+        'dark-secondary-container': '#D97707',
+        'dark-on-secondary-container': '#3C1C00',
+        'dark-tertiary': '#FFB59C',
+        'dark-on-tertiary': '#5C1900',
+        'dark-tertiary-container': '#A73400',
+        'dark-on-tertiary-container': '#FFC9B7',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#081425',
+        'dark-on-background': '#D8E3FB',
+        'dark-surface': '#081425',
+        'dark-surface-dim': '#081425',
+        'dark-surface-bright': '#2F3A4C',
+        'dark-surface-container-lowest': '#040E1F',
+        'dark-surface-container-low': '#111C2D',
+        'dark-surface-container': '#152031',
+        'dark-surface-container-high': '#1F2A3C',
+        'dark-surface-container-highest': '#2A3548',
+        'dark-on-surface': '#D8E3FB',
+        'dark-surface-variant': '#434655',
+        'dark-on-surface-variant': '#C4C5D7',
+        'dark-outline': '#8E90A0',
+        'dark-outline-variant': '#434655',
+        'dark-inverse-surface': '#D8E3FB',
+        'dark-inverse-on-surface': '#263143',
+        'dark-inverse-primary': '#2151DA',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Alatsi"', 'sans-serif'],
+        'headline': ['"Alatsi"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Spline Sans Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['48px', { lineHeight: '54px', letterSpacing: '-0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.25px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '38px', letterSpacing: '-0.25px', fontWeight: '400' }],
+        'headline-md': ['24px', { lineHeight: '30px', letterSpacing: '0px', fontWeight: '400' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'mono-price': ['20px', { lineHeight: '24px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Spline+Sans+Mono:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface dark:bg-dark-surface dark:text-dark-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col bg-light-surface dark:bg-dark-surface text-light-on-surface dark:text-dark-on-surface" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Persistent Top Header -->
+    <header class="sticky top-0 z-30 border-b border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low">
+      <div class="max-w-7xl mx-auto px-gutter-md md:px-page-margin py-gutter-md flex flex-wrap items-center justify-between gap-gutter-md">
+        <!-- Brand Mark -->
+        <a href="#top" class="inline-flex items-center gap-gutter-sm shrink-0">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded bg-light-primary text-brand-bolt dark:bg-dark-primary-container">
+            <span class="material-symbols-outlined text-headline-md" style="font-variation-settings: &#39;FILL&#39; 1;">bolt</span>
+          </span>
+          <span class="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface tracking-tight" data-design-text-token="headline-md">Thunder Deals</span>
+        </a>
+
+        <!-- Global Searchbar -->
+        <form id="deal-search-form" data-component-id="searchbar-standard" data-component-type="searchbar" data-component-variant="standard" role="search" class="order-3 md:order-2 flex items-center w-full md:max-w-md rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-low dark:bg-dark-surface-container px-gutter-md py-gutter-sm gap-gutter-sm focus-within:border-light-primary dark:focus-within:border-dark-primary transition-colors duration-state-change ease-state-change">
+          <input id="search-input-01" type="search" aria-label="Search worldwide deals" placeholder="Search Tech, Fashion, Home deals..." class="w-full bg-transparent border-0 p-0 font-body text-body-md text-light-on-surface dark:text-dark-on-surface placeholder:text-light-on-surface-variant dark:placeholder:text-dark-on-surface-variant focus:ring-0">
+          <button type="submit" aria-label="Submit search" class="inline-flex items-center justify-center text-light-on-surface-variant dark:text-dark-on-surface-variant hover:text-light-primary dark:hover:text-dark-primary">
+            <span class="material-symbols-outlined text-title-lg">search</span>
+          </button>
+        </form>
+
+        <!-- Global Utilities: Region & Dark Mode Toggle -->
+        <div class="order-2 md:order-3 flex items-center gap-gutter-sm">
+          <button type="button" id="worldwide-filter-btn" aria-pressed="false" class="hidden sm:inline-flex items-center gap-gutter-xs px-3 py-2 rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container text-light-on-surface dark:text-dark-on-surface hover:bg-light-surface-container dark:hover:bg-dark-surface-container-high transition-colors duration-state-change ease-state-change">
+            <span class="material-symbols-outlined text-title-md text-light-primary dark:text-dark-primary" aria-hidden="true">public</span>
+            <span class="font-label text-label-sm" data-design-text-token="label-sm">Global · USD</span>
+          </button>
+
+          <!-- COMPONENT: button-icon (Dark Mode Toggle) -->
+          <button id="theme-toggle" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Toggle dark mode" aria-pressed="false" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container text-light-on-surface dark:text-dark-on-surface hover:bg-light-surface-container dark:hover:bg-dark-surface-container-high transition-colors duration-state-change ease-state-change">
+            <span id="theme-icon" class="material-symbols-outlined text-title-lg">dark_mode</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Navigation Strip -->
+      <nav aria-label="Product categories" class="border-t border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-low dark:bg-dark-surface-container">
+        <div class="max-w-7xl mx-auto px-gutter-md md:px-page-margin py-gutter-sm flex items-center justify-between gap-gutter-md overflow-x-auto">
+          <div class="flex items-center gap-gutter-sm shrink-0" role="group" aria-label="Filter by category">
+            <!-- COMPONENT: chip-filter-selected -->
+            <button data-category-filter="all" data-component-id="chip-filter-selected" data-component-type="chip" data-component-variant="filter" aria-pressed="true" type="button" class="category-chip inline-flex items-center gap-gutter-xs px-4 py-1.5 rounded-full bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary transition-colors duration-state-change ease-state-change">
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">All Deals</span>
+            </button>
+
+            <!-- COMPONENT: chip-action -->
+            <button data-category-filter="tech" data-component-id="chip-action" data-component-type="chip" data-component-variant="action" aria-pressed="false" type="button" class="category-chip inline-flex items-center gap-gutter-xs px-4 py-1.5 rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low text-light-on-surface dark:text-dark-on-surface hover:bg-light-surface-container dark:hover:bg-dark-surface-container-high transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">devices</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Tech</span>
+            </button>
+
+            <button data-category-filter="fashion" data-component-id="chip-action" data-component-type="chip" data-component-variant="action" aria-pressed="false" type="button" class="category-chip inline-flex items-center gap-gutter-xs px-4 py-1.5 rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low text-light-on-surface dark:text-dark-on-surface hover:bg-light-surface-container dark:hover:bg-dark-surface-container-high transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">apparel</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Fashion</span>
+            </button>
+
+            <button data-category-filter="home" data-component-id="chip-action" data-component-type="chip" data-component-variant="action" aria-pressed="false" type="button" class="category-chip inline-flex items-center gap-gutter-xs px-4 py-1.5 rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low text-light-on-surface dark:text-dark-on-surface hover:bg-light-surface-container dark:hover:bg-dark-surface-container-high transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chair</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Home</span>
+            </button>
+          </div>
+
+          <div class="hidden lg:flex items-center gap-gutter-sm shrink-0 text-light-on-surface-variant dark:text-dark-on-surface-variant">
+            <span class="inline-block w-2 h-2 rounded-full bg-brand-bolt" aria-hidden="true"></span>
+            <span class="font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">12 VERIFIED WORLDWIDE DROPS LIVE</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="top" class="flex-1 max-w-7xl w-full mx-auto px-gutter-md md:px-page-margin py-gutter-lg md:py-gutter-lg flex flex-col gap-gutter-xl">
+
+      <!-- Section 1: Engaging Top Deals Banners -->
+      <section aria-labelledby="top-deals-heading" class="flex flex-col gap-gutter-md">
+        <div class="flex flex-wrap items-center justify-between gap-gutter-sm">
+          <h1 id="top-deals-heading" class="font-headline text-headline-lg text-light-on-surface dark:text-dark-on-surface" data-design-text-token="headline-lg">Top Worldwide Deals</h1>
+          <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Direct retailer links · Updated hourly</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md items-stretch">
+          <!-- Primary Hero Banner -->
+          <article class="lg:col-span-8 relative rounded-lg overflow-hidden border border-light-outline-variant dark:border-dark-outline-variant min-h-64 md:min-h-72 flex items-end">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrA8SYkBjvDL1LnjRVZIXPbj7oUdFNIYXT_US8B5ZCzvNBchvnNdADhvs-REHAFpNTzCghplMjbqJawP8CN2Eo6-t9u_ddeAKybJLAcipSnvsnQJ86pHwmrcFFltTyu6CbQHUav4at2Al4L3Aemm8e7XqmQvK4ttj2vfSdWo34LAfcT9dDmoc-et_H_a5ORQlTIZUuBtzdsJgYuxt5zuTTxaBjGRq7MnC0x9UFKHlRBJVuAG_RymaD-To9g" alt="Matte black wireless noise-canceling headphones and laptop on a dark desk" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-surface-container-lowest/95 via-dark-surface-container-lowest/75 to-transparent" aria-hidden="true"></div>
+            <div class="relative z-10 p-gutter-lg md:p-gutter-xl max-w-xl flex flex-col gap-gutter-md">
+              <div class="flex flex-wrap items-center gap-gutter-sm">
+                <span data-component-id="badge-numeric" data-component-type="badge" data-component-variant="numeric" class="inline-flex items-center px-3 py-1 rounded-full bg-brand-bolt text-light-on-surface font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">UP TO 42% OFF</span>
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-dark-surface-container-high text-dark-on-surface font-label text-label-sm" data-design-text-token="label-sm">
+                  <span class="material-symbols-outlined text-body-md" aria-hidden="true">public</span>
+                  Ships Worldwide
+                </span>
+              </div>
+
+              <h2 class="font-headline text-display-lg-mobile md:text-display-lg text-dark-on-surface text-balance" data-design-text-token="display-lg">
+                Studio Audio &amp; Pro Ultrabooks
+              </h2>
+              <p class="font-body text-body-md text-dark-on-surface-variant text-pretty max-w-prose" data-design-text-token="body-md">
+                Verified price drops on Sony WH-1000XM5 headphones, OLED creator laptops, and desktop audio gear across B&amp;H Photo and Amazon Global.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-gutter-md pt-gutter-xs">
+                <a href="#tech-deals" data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" class="inline-flex items-center justify-center gap-gutter-sm px-5 py-2.5 rounded bg-light-primary-container text-light-on-primary hover:bg-light-primary transition-colors duration-state-change ease-state-change">
+                  <span class="font-label text-label-lg" data-design-text-token="label-lg">Shop Tech Deals</span>
+                  <span class="material-symbols-outlined text-title-md" aria-hidden="true">arrow_forward</span>
+                </a>
+                <span class="font-mono text-mono-sm text-dark-on-surface-variant tabular-nums" data-design-text-token="mono-sm">From $248 USD</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stacked Secondary Banners -->
+          <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-gutter-md">
+            <!-- Fashion Banner -->
+            <article class="relative rounded-lg overflow-hidden border border-light-outline-variant dark:border-dark-outline-variant min-h-44 flex items-end">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrCKuOK-8Zd_Y63G7X4aTOW2jRzDdIe_FfFyETGUfCOLFlpGj4RXXwhoebGeMdY4QhluFmRZYnGtMF479mH5m7JbicAp9G2M3DN704myq5tm29IAhZVaOGqEeBvf_Gy8EVQiI7GxPjrBtpZvrZ87J-eiVYG4Nsk3G88OulQjey6eBU8oW4jHFhzM5k8f6ZVmeHNkSjfDtumZ4CzA41wA7hnluyYDfBp_DMg8RAtxCsSuFrEfrLWRJcydloLg2vuy" alt="Editorial street-style outerwear and minimalist sneakers" class="absolute inset-0 w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-r from-dark-surface-container-lowest/95 via-dark-surface-container-lowest/70 to-transparent" aria-hidden="true"></div>
+              <div class="relative z-10 p-gutter-lg flex flex-col gap-gutter-sm">
+                <span class="self-start inline-flex items-center px-2.5 py-0.5 rounded-full bg-dark-secondary text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">50% OFF ARCHIVE</span>
+                <h3 class="font-headline text-headline-md text-dark-on-surface" data-design-text-token="headline-md">Global Outerwear &amp; Footwear</h3>
+                <a href="#fashion-deals" class="inline-flex items-center gap-1 font-label text-label-lg text-dark-primary hover:underline" data-design-text-token="label-lg">
+                  <span>Explore Fashion</span>
+                  <span class="material-symbols-outlined text-title-md" aria-hidden="true">arrow_forward</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Home Banner -->
+            <article class="relative rounded-lg overflow-hidden border border-light-outline-variant dark:border-dark-outline-variant min-h-44 flex items-end">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrAgPajNfJ4gHQnT-MXAN_XRm0JmQ-bcOZyqX86Lfb0dmXaqZVjwy7hnf7jta4wQEhM__-_2VLD4ofaY3iDV8mAEcfD0wAFBBB8OQQ4xFe9H5wZQQbRxIfB0Er0Yw5o7ab1rz5OcfXRMUWxxI0Jg1QluG8qXPXJ7K5ueuEv42UNGWiMYhiTGxq0exISOC2_bkURJTQDUHigBFrAb8mOcOFrAit1454Ro4fjpAvc_ah8Tz1ISOK64sfrB4AUr" alt="Brushed stainless steel espresso machine and pour-over kettle on walnut counter" class="absolute inset-0 w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-r from-dark-surface-container-lowest/95 via-dark-surface-container-lowest/70 to-transparent" aria-hidden="true"></div>
+              <div class="relative z-10 p-gutter-lg flex flex-col gap-gutter-sm">
+                <span class="self-start inline-flex items-center px-2.5 py-0.5 rounded-full bg-dark-secondary text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">UP TO 35% OFF</span>
+                <h3 class="font-headline text-headline-md text-dark-on-surface" data-design-text-token="headline-md">Espresso &amp; Smart Home</h3>
+                <a href="#home-deals" class="inline-flex items-center gap-1 font-label text-label-lg text-dark-primary hover:underline" data-design-text-token="label-lg">
+                  <span>Explore Home</span>
+                  <span class="material-symbols-outlined text-title-md" aria-hidden="true">arrow_forward</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Tech Deals -->
+      <section id="tech-deals" data-category-section="tech" aria-labelledby="tech-heading" class="flex flex-col gap-gutter-lg">
+        <div class="flex flex-wrap items-center justify-between gap-gutter-sm border-b border-light-outline-variant dark:border-dark-outline-variant pb-gutter-sm">
+          <div class="flex items-center gap-gutter-sm">
+            <span class="material-symbols-outlined text-headline-md text-light-primary dark:text-dark-primary" aria-hidden="true">devices</span>
+            <h2 id="tech-heading" class="font-headline text-headline-lg text-light-on-surface dark:text-dark-on-surface" data-design-text-token="headline-lg">Tech Deals</h2>
+          </div>
+          <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant tabular-nums" data-design-text-token="mono-sm">4 OFFERS</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-sm items-stretch">
+          <!-- Tech Card 1 -->
+          <article data-deal-card data-title="Keychron Q1 Pro Keyboard Amazon Global" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDbHa4UwG9zCLCdI7HK8Znx2yNdk4d_wNVWOSURnLDwwQJUvcNEjzuKGehBojKur81HqUH03UrLKmyKv44EcWI8h28_UUVlwDO3WBiDnXRljh2s2blCOVeuJI_Ul32HinSp5Gin3jItBy0VKeW5ZitB_ciZbM7ngIx_WmzmOZ0MXFFxdXZhariW2raGxxI-NfJK0kROVg-4qWAi4L-otIT0472upBUCjZ53LE0Cf3agG3Kttf18" alt="Keychron Q1 Pro Mechanical Keyboard" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">38% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Amazon Global</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Keychron Q1 Pro Keyboard</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$124</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$199</span>
+              </div>
+              <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tech Card 2 -->
+          <article data-deal-card data-title="LG UltraGear 27 OLED Monitor B&amp;H Photo" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrAvCGeqDs59EK8lBlwifj2Pqh9RG_OxkP48xOX68SNvU0_W4r8fKMFl2CgoL9gjKOiICVXI0OSQdmf_mVuXHZCkjWa5PU6ZnCMbG9y1La0siBffCFs6BXfeU4YMobaGV5wKvjfS96UPCdEmu1-iwWHpQw77_feBF7favmPIwsG1oOnrzjqtQ8LqWTrjp6oHXwGaAzn4Zf95oldTHfME7nRzyly1F8s8sSclUFOeGaA_eL8uXTtD" alt="LG UltraGear 27-inch OLED Monitor" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">33% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">B&amp;H Photo</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">LG UltraGear 27&#34; OLED</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$599</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$899</span>
+              </div>
+              <a href="https://bhphotovideo.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tech Card 3 -->
+          <article data-deal-card data-title="Anker Prime 250W GaN Charger Anker Official" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrAVvLNcHArUAaPQC2ALqxldKhPSLS0442XBZoAg5miShVRlK7cUD8FR2VfMYqNhmvMidE3utFkmIBkZKk-JAP-U5ztOLOJkYCMLCjDVmWrN6CNMbOiUx3USHp4MijboWtMcO-CzpDHsjkEcbwnFBuQrHrRgVkV2xVQAT1SSYAOGWbbdhsWmrbxl6yRmJMmd6qPBBZO-VT--Ur3Gc-HN2Vug8mmy1PbHOnK0zqQP9qAYw64574Jj" alt="Anker Prime 250W GaN Charger" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">35% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Anker Official</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Anker Prime 250W GaN</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$109</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$169</span>
+              </div>
+              <a href="https://anker.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tech Card 4 -->
+          <article data-deal-card data-title="Fujifilm X-T5 Camera Body Adorama" data-worldwide="false" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDqvBBxV3isynxUi5wrdlQwSxGfSgPSirEInHlcYVPxGQaPXghwQBuN2iIP8JGYqoj8oSdzExKP7cThdTOghrn39DDxGoBedK0r1xMn24pUl5S4bn85aFWapuQ5rbhvBM85fS4I3NOcesLhI1mgNU2F-W3OSkX-X_vmraFcoBEXH0D3NPcxKBZuELK59JR7fT25_s_hPSCqcmtCtQtsKtoIgorgQIVcFlDBgfmQ7KMV_z-_Pg" alt="Fujifilm X-T5 Mirrorless Camera" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">15% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Adorama</span>
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">US &amp; EU</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Fujifilm X-T5 Body</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$1,449</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$1,699</span>
+              </div>
+              <a href="https://adorama.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 3: Fashion Deals -->
+      <section id="fashion-deals" data-category-section="fashion" aria-labelledby="fashion-heading" class="flex flex-col gap-gutter-lg">
+        <div class="flex flex-wrap items-center justify-between gap-gutter-sm border-b border-light-outline-variant dark:border-dark-outline-variant pb-gutter-sm">
+          <div class="flex items-center gap-gutter-sm">
+            <span class="material-symbols-outlined text-headline-md text-light-primary dark:text-dark-primary" aria-hidden="true">apparel</span>
+            <h2 id="fashion-heading" class="font-headline text-headline-lg text-light-on-surface dark:text-dark-on-surface" data-design-text-token="headline-lg">Fashion Deals</h2>
+          </div>
+          <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant tabular-nums" data-design-text-token="mono-sm">4 OFFERS</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-sm items-stretch">
+          <!-- Fashion Card 1 -->
+          <article data-deal-card data-title="Patagonia Nano Puff Jacket REI Co-op" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDXTxtGno6UFaGruzYdNtQqXjMDg5HVyveED6V_6lLTganUThB-rVLnL-U0mKO0wZRttnLWFPKyo53raCDnVcpV39J8DEiq781t4A2PTIJSTkZSO-Z8T2pW6pN6R4QQvbus5J7xWT_7XkijJH90Dv_icUsw1a9CXOVWxpqmVt0o6BXvRfZ8a0gajsApZJvCqu2RYQ8UNnSG80T__ZKIsFMINkudMF6hTBDq5sk26AAwvn3Vi2s" alt="Patagonia Nano Puff Jacket" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">39% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">REI Co-op</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Patagonia Nano Puff Jacket</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$139</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$229</span>
+              </div>
+              <a href="https://rei.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Fashion Card 2 -->
+          <article data-deal-card data-title="New Balance 990v6 END Clothing" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDyYSpergMEmuIwPuGa8ECPmqkH_JvZmSLTt9EZw7CdrNPCzv0AFe8CiOmjSDh2oDGR30uZIuMwaiRlgqQtdgERymB8polMwPqqTxcfcwLSq5mDu4w4UkRSPpmZhkF7Tn4m9c4sZ39c7GVZZ5xqW8vE5tMNKb1FzntQB78TegcJ6GNqBncr5h_l7U18sEkHfHHl70csU38eT706ijv4L4WmxgatDL-5d8SlxUAiDzSaPvJrjqWl1A" alt="New Balance 990v6 Suede Sneakers" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">28% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">END. Clothing</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">New Balance 990v6</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$145</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$200</span>
+              </div>
+              <a href="https://endclothing.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Fashion Card 3 -->
+          <article data-deal-card data-title="Bellroy Venture Sling 9L Bellroy Global" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDIPqk-_OtfpBnr04BFUo6OfXgLOiFST3W5b7ukptM3tcrES2Mf1YJ6P-E0CwGmOKk7-ywXvnzZzo5C2pF4pxDCCrXza4TvYD8FC-omH2bJFSuBJG86plbCTQ4v8vOzY7l6fkIiaxrZD6XY8sOWijYAP6pV6AIEDLJ34d0C_2NdaDOspWZkb74EluZ1VoZ2oUeux4aVI9ZSMvK0ZjK12zZsbnHQ-lzjCmNurQYvu6Y3s5Mulg" alt="Bellroy Venture Sling 9L" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">32% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Bellroy Global</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Bellroy Venture Sling 9L</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$95</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$139</span>
+              </div>
+              <a href="https://bellroy.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Fashion Card 4 -->
+          <article data-deal-card data-title="Cashmere Crewneck Sweater Uniqlo" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrCp1KTN60PTp0TWvZAuSntjjG1Md-OLXAA-7w7aJx8obntkLbj3OpSjvbnE247Er9akr4C8Yb0T0Blzc0y9peMc8XzzgIzINjVB0TfmalXxkpw17yhVgVvbBZjNKXdKEOczpKsQ0w2-qGn1LlMNX46p33cMf-7Sh_nLjuA9MA-RkeAx7yTPTrF_6t5JDLHxlqk4x1leYE3ul7g-E4oBHFVqDKzI184aJ-4Eur4AcyrlDvAPrEZr" alt="Uniqlo Cashmere Crewneck Sweater" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">30% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Uniqlo</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Cashmere Crewneck Sweater</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$69</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$99</span>
+              </div>
+              <a href="https://uniqlo.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 4: Home Deals -->
+      <section id="home-deals" data-category-section="home" aria-labelledby="home-heading" class="flex flex-col gap-gutter-lg">
+        <div class="flex flex-wrap items-center justify-between gap-gutter-sm border-b border-light-outline-variant dark:border-dark-outline-variant pb-gutter-sm">
+          <div class="flex items-center gap-gutter-sm">
+            <span class="material-symbols-outlined text-headline-md text-light-primary dark:text-dark-primary" aria-hidden="true">chair</span>
+            <h2 id="home-heading" class="font-headline text-headline-lg text-light-on-surface dark:text-dark-on-surface" data-design-text-token="headline-lg">Home Deals</h2>
+          </div>
+          <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant tabular-nums" data-design-text-token="mono-sm">4 OFFERS</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-sm items-stretch">
+          <!-- Home Card 1 -->
+          <article data-deal-card data-title="Breville Barista Express Williams Sonoma" data-worldwide="false" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDxI6We6w2HKef79OuzZKaTg3ZA0F_lW5WFqJHSoeS_cLHychwgZB00f7MBq-_zNWyXWbI8YMmFMS2hh1BP1-QuPEUV08wEtVRsg9FEWlXjof2UJkZLoXbsz9V33oD5ISIgQdl4KlzaP3FH3tNHi8VR4TdlIcPu0oKQKP1TqRQYWIlaFaQ5W-AqsE6RhMW9QpArhKbUe9nMdeQvPmo94LiCJrK2V_sQupn-bdxmPLyw0VobRqxJcQ" alt="Breville Barista Express Espresso Machine" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">28% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Williams Sonoma</span>
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">North America</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Breville Barista Express</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$649</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$899</span>
+              </div>
+              <a href="https://williams-sonoma.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Home Card 2 -->
+          <article data-deal-card data-title="Dyson V12 Detect Slim Dyson Direct" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrD9eBPgvf9LqqisfKaa40-N5q6iMb3ynMAMEPeHIwQvH1utuUzkirU02tT9tkycKCj1sLap28DXOqD5dR51BVELTGJ2CtHBFtN-ktCg-kTd3C3Zl69gyhhndS_fM1h6e--9l2GWAkEzhcNP7KJ-0fxntwHvX-aaACrc8G6ZNS03Wzr34XbUFpQvhRyNfTUeHqih_NdohMHXTqqcuxM92kmvQHQ-WuwNqQm6m66IkuiOxRZ0wDM" alt="Dyson V12 Detect Slim Vacuum" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">31% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Dyson Direct</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Dyson V12 Detect Slim</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$449</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$649</span>
+              </div>
+              <a href="https://dyson.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Home Card 3 -->
+          <article data-deal-card data-title="Le Creuset 5.5 Qt Dutch Oven Crate &amp; Barrel" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrCtOfMunt7i2Si2huf1bWeC8KCdzkOnHWPCkYrWbQmZCMTwX96dnEBuE6G5DIwATHLYXEPCZicrw_88rDHzN7P4dzjlsYqrrwbLvJdxhbEQ209Fq-IcJs_ePRGNp7slFzgLE2oLWgWJU2Gq9A0CZGjrquZgNJjy39m-u89e0e1rdjlFNr0KMThx1bzzjfjocwQo_enVTvtnVu-JkCs-WJSO-HJ2OCxznfVNVEXrR6291l8z-jaLuJp_" alt="Le Creuset 5.5 Qt Dutch Oven" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">29% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Crate &amp; Barrel</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Le Creuset 5.5 Qt Dutch Oven</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$299</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$420</span>
+              </div>
+              <a href="https://crateandbarrel.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Home Card 4 -->
+          <article data-deal-card data-title="Fellow Stagg EKG Pro Kettle Fellow" data-worldwide="true" data-component-id="card-action" data-component-type="card" data-component-variant="action" class="h-full rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low hover:bg-light-surface-container dark:hover:bg-dark-surface-container transition-colors duration-state-change ease-state-change overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative bg-light-surface-container-low dark:bg-dark-surface-container overflow-hidden h-36">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrBN3uLS1xWwUyg6EJiAT1dy8tPeOWsgkzuOwFbERw7tNJPmELHMkx3XdIvSKdWksCiT7zbZZV-47Shpe0ymQ45qgJeqdCReUBzhnUaJrqNziNvN2aBLriH6h3ugh68cRx30dY0jy1BtXCIh7zBHFh4nu4c72w97UJpQ-NkltbA8NUFwSDn3tghBO3GdElcgs84q8LWKVWN6vEPKvf6kmIuyqtZ_u8kyNbfGchO-ujYofaEAb4M" alt="Fellow Stagg EKG Pro Electric Kettle" class="w-full h-full object-cover">
+                <span class="absolute top-gutter-sm right-gutter-sm inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-secondary text-light-on-secondary dark:bg-dark-secondary dark:text-dark-on-secondary font-mono text-mono-sm tabular-nums" data-design-text-token="mono-sm">26% OFF</span>
+              </div>
+              <div class="p-gutter-sm flex flex-col gap-gutter-xs">
+                <div class="flex items-center justify-between gap-gutter-sm">
+                  <span class="font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="label-sm">Fellow</span>
+                  <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">Worldwide</span>
+                </div>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Fellow Stagg EKG Pro Kettle</h3>
+              </div>
+            </div>
+            <div class="p-gutter-sm pt-0 flex flex-col gap-gutter-sm">
+              <div class="flex items-baseline gap-gutter-sm">
+                <span class="font-mono text-mono-price text-light-primary dark:text-dark-primary tabular-nums" data-design-text-token="mono-price">$145</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant dark:text-dark-on-surface-variant line-through tabular-nums" data-design-text-token="mono-sm">$195</span>
+              </div>
+              <a href="https://fellowproducts.com" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-gutter-sm px-4 py-1.5 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary hover:bg-light-primary-container dark:hover:bg-dark-primary-container dark:hover:text-dark-on-primary-container transition-colors duration-state-change ease-state-change">
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Get Deal</span>
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low">
+      <div class="max-w-7xl mx-auto px-gutter-md md:px-page-margin py-gutter-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-gutter-md">
+        <div class="flex items-center gap-gutter-sm">
+          <span class="material-symbols-outlined text-title-lg text-brand-bolt" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">bolt</span>
+          <span class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface" data-design-text-token="title-md">Thunder Deals</span>
+          <span class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant" data-design-text-token="body-md">· Worldwide verified offers</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-gutter-lg font-label text-label-sm text-light-on-surface-variant dark:text-dark-on-surface-variant">
+          <a href="#tech-deals" class="hover:text-light-primary dark:hover:text-dark-primary">Tech</a>
+          <a href="#fashion-deals" class="hover:text-light-primary dark:hover:text-dark-primary">Fashion</a>
+          <a href="#home-deals" class="hover:text-light-primary dark:hover:text-dark-primary">Home</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var htmlEl = document.documentElement;
+      var themeToggle = document.getElementById('theme-toggle');
+      var themeIcon = document.getElementById('theme-icon');
+
+      function applyTheme(isDark) {
+        if (isDark) {
+          htmlEl.classList.add('dark');
+          themeIcon.textContent = 'light_mode';
+          themeToggle.setAttribute('aria-pressed', 'true');
+        } else {
+          htmlEl.classList.remove('dark');
+          themeIcon.textContent = 'dark_mode';
+          themeToggle.setAttribute('aria-pressed', 'false');
+        }
+      }
+
+      try {
+        var savedTheme = localStorage.getItem('thunder-deals-theme');
+        if (savedTheme === 'dark') applyTheme(true);
+      } catch (e) {}
+
+      themeToggle.addEventListener('click', function () {
+        var nextDark = !htmlEl.classList.contains('dark');
+        applyTheme(nextDark);
+        try {
+          localStorage.setItem('thunder-deals-theme', nextDark ? 'dark' : 'light');
+        } catch (e) {}
+      });
+
+      var chips = document.querySelectorAll('.category-chip');
+      var sections = document.querySelectorAll('[data-category-section]');
+
+      function updateCategoryFilter(cat) {
+        chips.forEach(function (chip) {
+          var isMatch = chip.getAttribute('data-category-filter') === cat;
+          chip.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+          if (isMatch) {
+            chip.className = 'category-chip inline-flex items-center gap-gutter-xs px-4 py-1.5 rounded-full bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary transition-colors duration-state-change ease-state-change';
+          } else {
+            chip.className = 'category-chip inline-flex items-center gap-gutter-xs px-4 py-1.5 rounded-full border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-lowest dark:bg-dark-surface-container-low text-light-on-surface dark:text-dark-on-surface hover:bg-light-surface-container dark:hover:bg-dark-surface-container-high transition-colors duration-state-change ease-state-change';
+          }
+        });
+        sections.forEach(function (sec) {
+          if (cat === 'all' || sec.getAttribute('data-category-section') === cat) {
+            sec.classList.remove('hidden');
+          } else {
+            sec.classList.add('hidden');
+          }
+        });
+      }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          updateCategoryFilter(chip.getAttribute('data-category-filter'));
+        });
+      });
+
+      var searchForm = document.getElementById('deal-search-form');
+      var searchInput = document.getElementById('search-input-01');
+      var dealCards = document.querySelectorAll('[data-deal-card]');
+
+      function filterDeals() {
+        var q = (searchInput.value || '').trim().toLowerCase();
+        dealCards.forEach(function (card) {
+          var text = (card.getAttribute('data-title') || '').toLowerCase();
+          if (!q || text.indexOf(q) !== -1) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', filterDeals);
+      searchForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        filterDeals();
+      });
+    })();
+  </script>
+
+
+</body></html>
