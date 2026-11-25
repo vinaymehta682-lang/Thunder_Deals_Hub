@@ -1,19 +1,40 @@
-<!DOCTYPE html><html lang="en"><head>
+
+
+<script>
+async function loadDeals() {
+  const response = await fetch("YOUR_MAKE_WEBHOOK_URL", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      deals: [
+        {
+          title: "Wireless Headphones",
+          price: 49.99,
+          currency: "USD",
+          discountPercent: 30,
+          merchant: "Example Store",
+          url: "https://example.com/deal/headphones"
+        }
+      ],
+      updatedAt: new Date().toISOString()
+    })
+  });
+
+  const data = await response.json();
+  console.log(data);
+
+  // Example: display the returned deals
+  document.getElementById("deals").textContent =
+    JSON.stringify(data.deals, null, 2);
+}
+
+loadDeals();
+</script>
+
+<pre id="deals">Loading deals...</pre><!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8"
-    
-  import { initializeApp } from "firebase/app";
-import { getFirestore, collection, onSnapshot } from "firebase/firestore";
-
-// Your Firebase Config from the Firebase Console
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "thunderdealshub.firebaseapp.com",
-  projectId: "thunderdealshub",
-  // ... rest of your configuration
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 // Listen to your "deals" collection in real-time
 onSnapshot(collection(db, "deals"), (snapshot) => {
