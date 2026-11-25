@@ -1,5 +1,34 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
+  npm install firebase
+  import { initializeApp } from "firebase/app";
+import { getFirestore, doc, onSnapshot } from "firebase/firestore";
+
+// Your Firebase configuration object from Step 1
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "thunderdealshub",
+  storageBucket: "thunderdealshub.appspot.com",
+  messagingSenderId: "82659282360",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Listen to a live "deals" document for instant updates
+onSnapshot(doc(db, "deals", "active-deals"), (docSnapshot) => {
+  if (docSnapshot.exists()) {
+    const data = docSnapshot.data();
+    console.log("Live update from Firebase: ", data);
+    // Update your UI here! For example:
+    // document.getElementById("deal-title").innerText = data.title;
+  }
+});
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thunder Deals — Worldwide Offers</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
