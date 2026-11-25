@@ -1,30 +1,32 @@
 <!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"
+    
   import { initializeApp } from "firebase/app";
-import { getFirestore, doc, onSnapshot } from "firebase/firestore";
+import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 
-// Your Firebase configuration object from Step 1
+// Your Firebase Config from the Firebase Console
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
+  authDomain: "thunderdealshub.firebaseapp.com",
   projectId: "thunderdealshub",
-  storageBucket: "thunderdealshub.appspot.com",
-  messagingSenderId: "82659282360",
-  appId: "YOUR_APP_ID"
+  // ... rest of your configuration
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Listen to a live "deals" document for instant updates
-onSnapshot(doc(db, "deals", "active-deals"), (docSnapshot) => {
-  if (docSnapshot.exists()) {
-    const data = docSnapshot.data();
-    console.log("Live update from Firebase: ", data);
-    // Update your UI here! For example:
-    // document.getElementById("deal-title").innerText = data.title;
-  }
+// Listen to your "deals" collection in real-time
+onSnapshot(collection(db, "deals"), (snapshot) => {
+  snapshot.docChanges().forEach((change) => {
+    if (change.type === "added") {
+      console.log("New deal added: ", change.doc.data());
+      // Add code here to render the new deal card on your webpage
+    }
+    if (change.type === "modified") {
+      console.log("Deal updated: ", change.doc.data());
+      // Add code here to update the existing deal (e.g., live price drops)
+    }
+  });
 });
   
   
